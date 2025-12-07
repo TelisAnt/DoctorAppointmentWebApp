@@ -1,0 +1,280 @@
+/* Βασικες μεταβλητες χρωματων */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --white: #ffffff;
+    --gray: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Σωστο μεγεθος στοιχειων */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--dark-color);
+    line-height: 1.6; /* Αραια αποσταση γραμμων */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Μεγιστο πλατος περιεχομενου */
+    margin: 0 auto; /* Κεντραρισμα */
+    padding: 0 20px; /* Παδινγκ στα πλαγια */
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Σκια */
+    position: fixed; /* Σταθερο στην κορυφη */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Πανω απο ολα */
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Στοιχιση στοιχειων */
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    gap: 25px; /* Αποσταση μεταξυ links */
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s ease; /* Ομαλη αλλαγη χρωματος */
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Κουμπια */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Ομαλες μεταβασεις */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px); /* Εφε κινησης */
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url('https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    height: 90vh; /* 90% του υψους οθονης */
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Αποφυγη header */
+}
+
+.hero-content {
+    max-width: 600px; /* Πλατος περιεχομενου */
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--gray);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px; /* Αποσταση κουμπιων */
+}
+
+/* Services Section */
+.section {
+    padding: 80px 0; /* Ανω/κατω παδινγκ */
+}
+
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+/* Καρτες υπηρεσιων */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Αυτοματη τοποθετηση */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Εφε ανυψωσης */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Σωστη εμφανιση εικονας */
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img img {
+    transform: scale(1.1); /* Ζουμ εικονας */
+}
+
+.service-content {
+    padding: 25px;
+}
+
+.service-content i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Contact Section */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color); /* Γραμμη κατω απο τιτλο */
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Κυκλικα εικονοδια */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Στηλη σε μικρες οθονες */
+        gap: 15px;
+    }
+
+    .hero {
+        height: auto; /* Αυτοματο υψος */
+        padding: 120px 0 60px;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem; /* Μικροτερος τιτλος */
+    }
+}
